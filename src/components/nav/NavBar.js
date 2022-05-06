@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
 import "./NavBar.css"
 
 export const NavBar = () => {
@@ -7,14 +8,14 @@ export const NavBar = () => {
     return (
         <ul className="navbar">
             <li className="navbar__item">
-                Navigation link
+                <Link className="nav_link" to="/games">Games</Link>
             </li>
             <li className="navbar__item">
-                Navigation link
+            <Link className="nav_link" to="/events">Events</Link>
             </li>
-            <li className="navbar__item">
+            {/* <li className="navbar__item">
                 Navigation link
-            </li>
+            </li> */}
             {
                 (localStorage.getItem("lu_token") !== null) ?
                     <li className="nav-item">
